@@ -378,25 +378,21 @@ function ButtonDel_Callback(hObject, eventdata, handles)
 % hObject    handle to ButtonDel (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-global img_inf;
+
 list_info = get(handles.CropInfoBox, 'string');
 [n,~] = size(list_info);
 CurPt = get(handles.CropInfoBox, 'Value');
 % 列表框当前选中项
 if CurPt == 1
     list_info = list_info(2:n);
-    img_inf = img_inf(2:n);
+    img_inf = img_
 elseif CurPt == n
     set(handles.CropInfoBox, 'Value', n-1);
     list_info = list_info(1:(n-1));
-    img_inf = img_inf(1:(n-1));
 else
     list_tmp(1:CurPt-1) = list_info(1:CurPt-1);
     list_tmp(CurPt:(n-1)) = list_info((CurPt+1):n);
     list_info = list_tmp;
-    img_tmp(1:CurPt-1) = img_inf(1:CurPt-1);
-    img_tmp(CurPt:(n-1)) = img_inf((CurPt+1):n);
-    img_inf = img_tmp; 
 end
 set(handles.CropInfoBox, 'string', list_info);
 
@@ -509,9 +505,6 @@ else
     
     set(handles.editInput, 'string', '');
     set(handles.editOutput, 'string', '');
-    set(handles.Filename, 'string', '');
-    set(handles.Prefix, 'string', '');
-    set(handles.Suffix, 'string', '');
     set(handles.editX, 'string', '');
     set(handles.editY, 'string', '');
     set(handles.editW, 'string', '');

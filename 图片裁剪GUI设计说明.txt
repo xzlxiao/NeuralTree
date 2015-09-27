@@ -1,0 +1,47 @@
+%% 组件列表
+% 坐标获取
+editX
+editY
+editW
+editH
+editZ1
+editZ2
+
+% 路径获取
+editInput
+editOutput
+ButtonViewin
+ButtonViewout
+
+% 后缀状态控制
+uipanelsuffix
+suffixN
+suffixY
+
+% 信息显示
+CropInfoBox
+
+% 运行控制
+ButtonAdd
+ButtonRun
+ButtonDel
+
+%% 变量列表
+img_inf[n]{'SrcDir','', ...
+    'DstDir','', ...
+    'CropHeight',0, ...
+    'CropWidth', 0, ...
+    'CropWidthFirstPointCoordinate', 0, ...
+    'CropHeightFirstPointCoordinate',0, ...
+    'Zstart', 0, ...
+    'Zend', 0}
+SrcDir
+DstDir
+CropHeight
+CropWidth
+CropWidthFirstPointCoordinate
+CropHeightFirstPointCoordinate
+
+%% 功能说明
+ButtonDel
+删除CropInfoBox当前选中信息、
