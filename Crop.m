@@ -2,8 +2,8 @@
 clear all;
 close all;
 clc;
-SrcDir='I:\MOSTData\MBA-GI13442_preprocess\08301-08800\';        %文件输入地址
-DstDir = 'I:\MOSTData\MBA-GI13442_ongoing\Right hippocampal tissue mod\08301-08800\'; %文件输出地址
+SrcDir='G:\MBA-GI13443_preprocess\dst-uni\';        %文件输入地址
+DstDir = 'F:\test\'; %文件输出地址
 dirfile=dir(SrcDir);
 % ImNum=size(dirfile);
 Im_Name = dirfile(3).name;
@@ -23,12 +23,12 @@ Imwidth = uint16(Imsize(2));
 
 
 %以下数据由Fiji测量获得
-CropHeight = 8512;   %裁剪高度
-CropWidth = 5984;    %裁剪宽度
-CropWidthFirstPointCoordinate = 22528;  %左上角点的横坐标
-CropHeightFirstPointCoordinate = 4096; %左上角点的纵坐标
+CropWidthFirstPointCoordinate = 5088;  %左上角点的横坐标
+CropHeightFirstPointCoordinate = 14400; %左上角点的纵坐标
+CropWidth = 7904;    %裁剪宽度
+CropHeight = 5632;   %裁剪高度
 
-zRange = [08301 08800];   %所需裁剪的图片编号范围
+zRange = [02000 02010];   %所需裁剪的图片编号范围
 
 for z = zRange(1) : 1 :zRange(2)
     disp('----------------------------------'), disp(z) , disp('-----------------------------');%

@@ -1,0 +1,39 @@
+28-Sep-2015
+[2]MBA-GI13443_XXXXX_Cropÿÿÿÿÿÿ Xÿ100 Yÿ100 ÿÿÿÿÿ100 ÿÿÿÿÿ100 ÿÿÿÿÿ6211 -6220
+28-Sep-2015
+[1]MBA-GI13443_XXXXX_CropCropCoordinate Xÿ100 Yÿ100 CropWidthÿ100 CropHeightÿ100 ZRangeÿ6201 -6210
+[2]MBA-GI13443_XXXXX_CropCropCoordinate Xÿ100 Yÿ100 CropWidthÿ100 CropHeightÿ100 ZRangeÿ6211 -6220
+[3]MBA-GI13443_XXXXX_CropCropCoordinate Xÿ100 Yÿ100 CropWidthÿ100 CropHeightÿ100 ZRangeÿ6221 -6230
+28-Sep-2015
+[1]MBA-GI13443_XXXXX_CropCropCoordinate Xÿ100 Yÿ100 CropWidthÿ100 CropHeightÿ100 ZRangeÿ6201 -6210
+[2]MBA-GI13443_XXXXX_CropCropCoordinate Xÿ100 Yÿ100 CropWidthÿ100 CropHeightÿ100 ZRangeÿ6211 -6220
+[3]MBA-GI13443_XXXXX_CropCropCoordinate Xÿ100 Yÿ100 CropWidthÿ100 CropHeightÿ100 ZRangeÿ6221 -6230
+28-Sep-2015
+[1]MBA-GI13443_XXXXX_CropCropCoordinate Xÿ100 Yÿ100 CropWidthÿ100 CropHeightÿ100 ZRangeÿ6201 -6210
+[2]MBA-GI13443_XXXXX_CropCropCoordinate Xÿ100 Yÿ100 CropWidthÿ100 CropHeightÿ100 ZRangeÿ6211 -6220
+[3]MBA-GI13443_XXXXX_CropCropCoordinate Xÿ100 Yÿ100 CropWidthÿ100 CropHeightÿ100 ZRangeÿ6221 -6230
+28-Sep-2015
+[1]MBA-GI13443_XXXXX_Crop CropCoordinate Xÿ100 Yÿ100 CropWidthÿ100 CropHeightÿ100 ZRangeÿ6201 -6210
+28-Sep-2015 
+28-Sep-2015 
+28-Sep-2015 
+[1]MBA-GI13443_XXXXX_Crop CropCoordinate X£º100 Y£º100 CropWidth£º100 CropHeight£º100 ZRange£º6201 -6210 
+28-Sep-2015 
+[1]MBA-GI13443_XXXXX_Crop CropCoordinate X£º100 Y£º100 CropWidth£º100 CropHeight£º100 ZRange£º6201 -6210 
+28-Sep-2015 
+[1]MBA-GI13443_XXXXX_Crop CropCoordinate X£º100 Y£º100 CropWidth£º100 CropHeight£º100 ZRange£º6201 -6210 
+28-Sep-2015 
+[2]MBA-GI13443_XXXXX_Crop CropCoordinate X£º100 Y£º100 CropWidth£º100 CropHeight£º100 ZRange£º6211 -6220 
+28-Sep-2015 
+[2]MBA-GI13443_XXXXX_Crop CropCoordinate X£º100 Y£º100 CropWidth£º100 CropHeight£º100 ZRange£º6211 -6220 
+[2]MBA-GI13443_XXXXX_Crop CropCoordinate X£º100 Y£º100 CropWidth£º100 CropHeight£º100 ZRange£º6211 -6220 
+28-Sep-2015 
+[3]MBA-GI13443_XXXXX_Crop CropCoordinate X£º100 Y£º100 CropWidth£º100 CropHeight£º100 ZRange£º6221 -6230 
+[3]MBA-GI13443_XXXXX_Crop CropCoordinate X£º100 Y£º100 CropWidth£º100 CropHeight£º100 ZRange£º6221 -6230 
+[3]MBA-GI13443_XXXXX_Crop CropCoordinate X£º100 Y£º100 CropWidth£º100 CropHeight£º100 ZRange£º6221 -6230 
+28-Sep-2015 
+28-Sep-2015 
+[2]MBA-GI13443_XXXXX_Crop CropCoordinate X£º100 Y£º100 CropWidth£º100 CropHeight£º100 ZRange£º6211 -6220 ±¸×¢ÐÅÏ¢£º²âÊÔ2 
+[2]MBA-GI13443_XXXXX_Crop CropCoordinate X£º100 Y£º100 CropWidth£º100 CropHeight£º100 ZRange£º6211 -6220 ±¸×¢ÐÅÏ¢£º²âÊÔ2 
+28-Sep-2015 
+[1]MBA-GI13443_XXXXX_Crop CropCoordinate X£º100 Y£º100 CropWidth£º100 CropHeight£º100 ZRange£º6201 -6210 ±¸×¢ÐÅÏ¢£º 
