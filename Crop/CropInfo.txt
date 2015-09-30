@@ -37,3 +37,20 @@
 [2]MBA-GI13443_XXXXX_Crop CropCoordinate X：100 Y：100 CropWidth：100 CropHeight：100 ZRange：6211 -6220 备注信息：测试2 
 28-Sep-2015 
 [1]MBA-GI13443_XXXXX_Crop CropCoordinate X：100 Y：100 CropWidth：100 CropHeight：100 ZRange：6201 -6210 备注信息： 
+29-Sep-2015 
+[2]MBA-GI13443_XXXXX_Crop CropCoordinate X：100 Y：100 CropWidth：100 CropHeight：100 ZRange：6211 -6220 备注信息：测试2 
+[2]MBA-GI13443_XXXXX_Crop CropCoordinate X：100 Y：100 CropWidth：100 CropHeight：100 ZRange：6211 -6220 备注信息：测试2 
+29-Sep-2015 
+[2]MBA-GI13443_XXXXX_Crop CropCoordinate X：100 Y：100 CropWidth：100 CropHeight：100 ZRange：6211 -6220 备注信息：测试2 
+[2]MBA-GI13443_XXXXX_Crop CropCoordinate X：100 Y：100 CropWidth：100 CropHeight：100 ZRange：6211 -6220 备注信息：测试2 
+29-Sep-2015 
+[2]MBA-GI13443_XXXXX_Crop CropCoordinate X：100 Y：100 CropWidth：100 CropHeight：100 ZRange：6211 -6220 备注信息：测试2 
+[2]MBA-GI13443_XXXXX_Crop CropCoordinate X：100 Y：100 CropWidth：100 CropHeight：100 ZRange：6211 -6220 备注信息：测试2 
+29-Sep-2015 
+[1]MBA-GI13443_XXXXX_Crop CropCoordinate X：100 Y：100 CropWidth：100 CropHeight：100 ZRange：6201 -6210 备注信息：测试1 
+[2]MBA-GI13443_XXXXX_Crop CropCoordinate X：100 Y：100 CropWidth：100 CropHeight：100 ZRange：6211 -6220 备注信息：测试2 
+29-Sep-2015 
+[1]MBA-GI13443_XXXXX_Crop CropCoordinate X：100 Y：100 CropWidth：100 CropHeight：100 ZRange：6201 -6210 备注信息：测试1 
+[2]MBA-GI13443_XXXXX_Crop CropCoordinate X：100 Y：100 CropWidth：100 CropHeight：100 ZRange：6211 -6220 备注信息：测试2 
+29-Sep-2015 
+[2]MBA-GI13443_XXXXX CropCoordinate X：100 Y：100 CropWidth：100 CropHeight：100 ZRange：1000 -1003 备注信息： 

@@ -1,28 +1,18 @@
 function varargout = Crop_GUI(varargin)
-% CROP_GUI MATLAB code for Crop_GUI.fig
-%      CROP_GUI, by itself, creates a new CROP_GUI or raises the existing
-%      singleton*.
-%
-%      H = CROP_GUI returns the handle to a new CROP_GUI or the handle to
-%      the existing singleton*.
-%
-%      CROP_GUI('CALLBACK',hObject,eventData,handles,...) calls the local
-%      function named CALLBACK in CROP_GUI.M with the given input arguments.
-%
-%      CROP_GUI('Property','Value',...) creates a new CROP_GUI or raises the
-%      existing singleton*.  Starting from the left, property value pairs are
-%      applied to the GUI before Crop_GUI_OpeningFcn gets called.  An
-%      unrecognized property name or invalid value makes property application
-%      stop.  All inputs are passed to Crop_GUI_OpeningFcn via varargin.
-%
-%      *See GUI Options on GUIDE's Tools menu.  Choose "GUI allows only one
-%      instance to run (singleton)".
-%
-% See also: GUIDE, GUIDATA, GUIHANDLES
+%   软件功能：图片裁剪
+%   软件说明：GUI设计，输入参数为图片输入路径（输入路径选择任意需要裁剪的图片文件，将自动获取路径和文件名信息
+%   、图片输出路径、文件名前缀、文件名后缀（图片数字需要后，“.JPG”之前的部分），
+%   图片裁剪区域左上角坐标X、Y，裁剪的宽度和高度：W、H，这四个参数由imageJ获取，
+%   需裁剪图片的起始序号和终止序号，备注信息
+%   填写裁剪区域所在脑区，如海马CA1区。
+%   参数填写完毕后，点击添加，会在列表框生成一条裁剪信息，
+%   点击运行按钮会根据添加的裁剪信息进行图片裁剪
+%   Created by 肖镇龙.
+%   Copyright (c) 2015年 肖镇龙. All rights reserved.
 
 % Edit the above text to modify the response to help Crop_GUI
 
-% Last Modified by GUIDE v2.5 28-Sep-2015 18:53:51
+% Last Modified by GUIDE v2.5 29-Sep-2015 10:02:44
 
 % Begin initialization code - DO NOT EDIT
 
@@ -106,7 +96,7 @@ if isempty(inDir)|| ...
         isempty(Height )|| ...
         isempty(Z1 )|| ...
         isempty(Z2)
-    msgbox('请输入路径、坐标以及裁剪区域信息');
+    msgbox('请输入输出路径、坐标以及裁剪区域信息');
 else
     
     list_tmp1 = get(handles.CropInfoBox, 'string');
@@ -179,13 +169,22 @@ for i = 1 : col
     Crop_img(img_inf(col));
 end
 Outprint = get(handles.CropInfoBox, 'string');
-file = fopen('CropInfo.txt', 'at');
-fprintf(file, '%s \n', date);
+file1 = fopen('CropInfo.txt', 'at');
+fprintf(file1, '%s \n', date);
 [n, ~] = size(Outprint);
+filename_info = 'info.txt';
 for i = 1 : n
-    fprintf(file, '%s \n', Outprint{n,1});
+    fprintf(file1, '%s \n', Outprint{i,1});
 end
-fclose(file);
+fclose(file1);
+for i = 1 : n
+    SavDir = strcat(img_inf(i).DstDir, filename_info);
+    file2 = fopen(SavDir, 'at');
+    fprintf(file2, '%s \n', date);
+    fprintf(file2, '%s \n', Outprint{i,1});
+    fclose(file2);
+end
+
 
 
 
@@ -526,3 +525,11 @@ function edit13_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
+
+
+% --- Executes on button press in buttonInfo.
+function buttonInfo_Callback(hObject, eventdata, handles)
+% hObject    handle to buttonInfo (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+open('图片裁剪GUI设计说明.txt');
