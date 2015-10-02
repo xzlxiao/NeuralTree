@@ -35,6 +35,7 @@ CropInfoBox
 ButtonAdd
 ButtonRun
 ButtonDel
+buttonRun2
 
 %% 变量列表
 img_inf[n]{'SrcDir','', ...

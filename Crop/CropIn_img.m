@@ -1,8 +1,8 @@
-function [] = Crop_img(img_inf)
-% 函数功能：图片裁剪
-% 修改时间：2015-9-24
+function [] = CropIn_img(img_inf)
+% 函数功能：图片裁剪及反色
+% 修改时间：2015-10-2
 % 作者：肖镇龙
-% function [] = Crop_img(img_inf)
+% function [] = CropIn_img(img_inf)
 SrcDir=img_inf.SrcDir;        %文件输入地址
 DstDir = img_inf.DstDir;    %文件输出地址
 dirfile=dir(SrcDir);
@@ -25,7 +25,8 @@ for z = zRange(1) : 1 :zRange(2)
     Im=imread([SrcDir Im_Prefix num2str(z,'%05d') Im_Suffix  '.jpg']);
 %     Rotate_Image = imrotate(Im,-30,'bilinear','loose');
     Crop_Image = imcrop(Im,[CropWidthFirstPointCoordinate CropHeightFirstPointCoordinate CropWidth-1 CropHeight-1]);
-    imwrite(Crop_Image,[DstDir Im_Prefix num2str(z,'%05d') '_Crop.jpg'],'quality',95);
+    Crop_tmp = img_invert(Crop_Image);
+    imwrite(Crop_tmp,[DstDir Im_Prefix num2str(z,'%05d') '.jpg'],'quality',95);
     toc;
 end
 disp('End');

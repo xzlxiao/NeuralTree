@@ -320,9 +320,7 @@ else
 end
 [n2,~] = size(list_info);
 for i = 1 : n2
-    list_info{i}(2) = num2str(i);
-    img_inf(i).init = num2str(i);
-end
+    
 set(handles.CropInfoBox, 'string', list_info);
 setappdata(handles.CropInfoBox, 'ImgData', img_inf);
 
