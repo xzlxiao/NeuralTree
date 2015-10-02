@@ -130,16 +130,12 @@ else
     list_cat{n+1} = list_tmp2;
     set(handles.CropInfoBox, 'string', list_cat);
     
-    set(handles.editInput, 'string', '');
-    set(handles.editOutput, 'string', '');
-    set(handles.Filename, 'string', '');
     set(handles.editX, 'string', '');
     set(handles.editY, 'string', '');
     set(handles.editW, 'string', '');
     set(handles.editH, 'string', '');
     set(handles.editZ1, 'string', '');
     set(handles.editZ2, 'string', '');
-    set(handles.edit13, 'string', '');
 end
 setappdata(handles.CropInfoBox, 'ImgData', img_inf);
 
@@ -166,7 +162,7 @@ function ButtonRun_Callback(~, ~, handles)
 img_inf = getappdata(handles.CropInfoBox, 'ImgData');
 [~, col] = size(img_inf);
 for i = 1 : col
-    Crop_img(img_inf(col));
+    Crop_img(img_inf(i));
 end
 Outprint = get(handles.CropInfoBox, 'string');
 file1 = fopen('CropInfo.txt', 'at');

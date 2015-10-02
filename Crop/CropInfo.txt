@@ -54,3 +54,10 @@
 [2]MBA-GI13443_XXXXX_Crop CropCoordinate X：100 Y：100 CropWidth：100 CropHeight：100 ZRange：6211 -6220 备注信息：测试2 
 29-Sep-2015 
 [2]MBA-GI13443_XXXXX CropCoordinate X：100 Y：100 CropWidth：100 CropHeight：100 ZRange：1000 -1003 备注信息： 
+02-Oct-2015 
+[1]MBA-GI13444_XXXXX CropCoordinate X：13376 Y：8608 CropWidth：6688 CropHeight：7648 ZRange：3501 -4000 备注信息：左侧海马区 
+[2]MBA-GI13444_XXXXX CropCoordinate X：12256 Y：7360 CropWidth：7072 CropHeight：8960 ZRange：4001 -4500 备注信息：左侧海马区 
+[3]MBA-GI13444_XXXXX CropCoordinate X：10624 Y：6016 CropWidth：8640 CropHeight：10271 ZRange：4501 -5000 备注信息：左侧海马区 
+[4]MBA-GI13444_XXXXX CropCoordinate X：9504 Y：5024 CropWidth：8704 CropHeight：11232 ZRange：5001 -5500 备注信息：左侧海马区 
+[5]MBA-GI13444_XXXXX CropCoordinate X：6208 Y：4224 CropWidth：11744 CropHeight：9888 ZRange：5501 -6000 备注信息：左侧海马区 
+[6]MBA-GI13444_XXXXX CropCoordinate X：3168 Y：4224 CropWidth：14080 CropHeight：8768 ZRange：6001 -6500 备注信息：左侧海马区 
