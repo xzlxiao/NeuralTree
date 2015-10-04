@@ -14,7 +14,7 @@ function varargout = Crop_GUI(varargin)
 
 % Edit the above text to modify the response to help Crop_GUI
 
-% Last Modified by GUIDE v2.5 02-Oct-2015 15:32:13
+% Last Modified by GUIDE v2.5 04-Oct-2015 18:47:30
 
 % Begin initialization code - DO NOT EDIT
 
@@ -654,4 +654,78 @@ for i = 1 : n
     fprintf(file2, '%s \n', date);
     fprintf(file2, '%s \n', Outprint{i,1});
     fclose(file2);
+end
+
+
+% --- Executes on button press in ButtonPrj.
+function ButtonPrj_Callback(hObject, eventdata, handles)
+% hObject    handle to ButtonPrj (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+[filename, pathname] = uigetfile({'*.jpg', 'JPG文件';'*.tif', 'TIF文件'}, '选取图片', 'MultiSelect', 'on');
+prj_property = -1;
+if pathname ~= 0
+    prj_ptmp = questdlg('请确定投影图片背景颜色，已决定正确地投影参数', ...
+        '投影参数选择', '黑色', '浅色', '取消', '黑色');
+    switch prj_ptmp
+        case '黑色'
+            prj_property = 1;
+        case '浅色'
+            prj_property = 0;
+        case '取消'
+            prj_property = -1;
+    end
+end
+if prj_property ~= -1
+    %   判断叠加的图片数量
+    stack_num = 100;
+    %   设置投影图储存地址
+    save_path = strcat(pathname, 'prj/');
+    CreateFolder(save_path);
+    %   设置图片读取的路径信息
+    [~, up_lim] = size(filename);
+    filedir = cell(1, up_lim);
+    for i = 1 : up_lim
+        filedir{1, i} = strcat(pathname, filename{1, i});
+    end
+    fix_lim = fix(up_lim/stack_num);
+    rem_lim = rem(up_lim, stack_num);
+    %   按顺序读取图片
+    if rem_lim > 0
+        waitbar_1 = waitbar(0, '进度');
+        steps = up_lim;
+        for i = 0 : (fix_lim - 1)
+            img_first = imread(filedir{(i*stack_num) + 1});
+            for j = 1 : stack_num
+                img_next = imread(filedir{(i * stack_num) + j});
+                img_first = img_prj(img_first, img_next, prj_property);
+                waitbar(((i * stack_num) + j)/steps,waitbar_1,num2str((i * stack_num) + j));
+            end
+            [filename2, ~] = strtok(filename{(i*stack_num) + 1}, '.');
+            imwrite(img_first, strcat(save_path, filename2, 'stack.tif'));
+        end
+        img_first = imread(filedir{(fix_lim*stack_num) + 1});
+        for i = 1 : rem_lim
+            img_next = imread(filedir{(fix_lim*stack_num) + i});
+            img_first = img_prj(img_first, img_next, prj_property);
+            waitbar(((fix_lim*stack_num) + i)/steps, waitbar_1, num2str((fix_lim*stack_num) + i));
+        end
+        [filename2, ~] = strtok(filename{(fix_lim*stack_num) + 1}, '.');
+        imwrite(img_first, strcat(save_path, filename2, 'stack.tif'));
+        close(waitbar_1);
+    else
+        waitbar_2 = waitbar(0, '进度');
+        steps = up_lim;
+        for i = 0 : (fix_lim - 1)
+            img_first = imread(filedir{(i*stack_num) + 1});
+            for j = 1 : stack_num
+                img_next = imread(filedir{(i * stack_num) + j});
+                img_first = img_prj(img_first, img_next, prj_property);
+                waitbar(((i * stack_num) + j)/steps, waitbar_2, num2str((i * stack_num) + j));
+            end
+            [filename2, ~] = strtok(filename{(i*stack_num) + 1}, '.');
+            imwrite(img_first, strcat(save_path, filename2, 'stack.tif'));
+        end
+        close(waitbar_2);
+    end
 end
