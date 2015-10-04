@@ -167,9 +167,13 @@ function ButtonRun_Callback(~, ~, handles)
 % handles    structure with handles and user data (see GUIDATA)
 img_inf = getappdata(handles.CropInfoBox, 'ImgData');
 [~, col] = size(img_inf);
+waitbar_crop = waitbar(0, '图片裁剪中');
+steps = col;
 for i = 1 : col
     Crop_img(img_inf(i));
+    waitbar(i/steps, waitbar_crop, strcat('总进度：图片序列',num2str(i)));
 end
+close(waitbar_crop);
 Outprint = get(handles.CropInfoBox, 'string');
 file1 = fopen('CropInfo.txt', 'at');
 fprintf(file1, '%s \n', date);
