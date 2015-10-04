@@ -547,7 +547,51 @@ function Test_But_Callback(hObject, eventdata, handles)
 % hObject    handle to Test_But (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-img_invert;
+[filename, pathname] = uigetfile({'*.jpg', 'JPG文件';'*.tif', 'TIF文件'}, '选取图片', 'MultiSelect', 'on');
+if pathname ~= 0
+    %   判断叠加的图片数量
+    stack_num = 100;
+    %   设置投影图储存地址
+    save_path = strcat(pathname, 'prj/');
+    CreateFolder(save_path);
+    %   设置图片读取的路径信息
+    [~, up_lim] = size(filename);
+    filedir = cell(1, up_lim);
+    for i = 1 : up_lim
+        filedir{1, i} = strcat(pathname, filename{1, i});
+    end
+    fix_lim = fix(up_lim/stack_num);
+    rem_lim = rem(up_lim, stack_num);
+    %   按顺序读取图片
+    if rem_lim > 0
+        for i = 0 : (fix_lim - 1)
+            img_first = imread(filedir{(i*stack_num) + 1});
+            for j = 1 : stack_num
+                img_next = imread(filedir{(i * stack_num) + j});
+                img_first = img_prj(img_first, img_next, 0);
+            end
+            [filename2, ~] = strtok(filename{(i*stack_num) + 1}, '.');
+            imwrite(img_first, strcat(save_path, filename2, 'stack.tif'));
+        end
+        img_first = imread(filedir{(fix_lim*stack_num) + 1});
+        for i = 1 : rem_lim
+            img_next = imread(filedir{(fix_lim*stack_num) + i});
+            img_first = img_prj(img_first, img_next, 0);
+        end
+        [filename2, ~] = strtok(filename{(fix_lim*stack_num) + 1}, '.');
+        imwrite(img_first, strcat(save_path, filename2, 'stack.tif'));
+    else
+        for i = 0 : (fix_lim - 1)
+            img_first = imread(filedir{(i*stack_num) + 1});
+            for j = 1 : stack_num
+                img_next = imread(filedir{(i * stack_num) + j});
+                img_first = img_prj(img_first, img_next, 0);
+            end
+            [filename2, ~] = strtok(filename{(i*stack_num) + 1}, '.');
+            imwrite(img_first, strcat(save_path, filename2, 'stack.tif'));
+        end
+    end
+end
 
 
 % --- Executes on button press in buttonInvert.
@@ -556,6 +600,7 @@ function buttonInvert_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 img_invert;
+            
 
 
 % --- Executes on button press in buttonRun2.
