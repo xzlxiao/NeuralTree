@@ -3,6 +3,7 @@ function varargout = img_invert(img_file)
 % 修改时间：2015-10-2
 % 作者：肖镇龙
 % varargout = img_invert(img_file)
+% % 接口：如果输入图片，则输出反色后的图片，如无输入，则打开文件选择对话框，将图片反色后储存于INVERT文件夹
 if nargin == 0
     [filename, pathname] = uigetfile({'*.jpg', 'JPG图片'; '*.tif', 'TIF图片'}, '选择图片', 'MultiSelect' , 'on');
     if pathname == 0 
@@ -10,6 +11,8 @@ if nargin == 0
         return;
     end
     [~,n] = size(filename);
+    waitbarInv = waitbar(0, '图片反色中');
+    steps = n;
     for i = 1 : n
         filename_tmp = filename{i};
         dir = strcat(pathname, filename_tmp);
@@ -30,7 +33,9 @@ if nargin == 0
             mkdir(pathname, 'INVERT');
         end
         imwrite( img_inv, path_write);
+        waitbar(i/steps,  waitbarInv);
     end
+    close(waitbarInv);
     return
 elseif nargin == 1
      [x1, y1] = size(img_file);

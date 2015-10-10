@@ -17,10 +17,12 @@ CropWidth = img_inf.CropWidth;    %裁剪宽度
 CropHeight = img_inf.CropHeight ;   %裁剪高度
 
 zRange = [img_inf.Zstart img_inf.Zend];   %所需裁剪的图片编号范围
-
+waitbar_crop3 = waitbar(0, '当前图片序列进度');
+steps = img_inf.Zend - img_inf.Zstart;
 for z = zRange(1) : 1 :zRange(2)
     disp('----------------------------------'), disp(z) , disp('-----------------------------');%
     tic;
+    waitbar((z-img_inf.Zstart)/steps, waitbar_crop3, strcat('正在裁剪当前序列第', num2str(z-img_inf.Zstart), '张图片'));
     %     Im=imread([SrcDir Im_Prefix num2str(z,'%05d') '.jpg']);
     Im=imread([SrcDir Im_Prefix num2str(z,'%05d') Im_Suffix  '.jpg']);
 %     Rotate_Image = imrotate(Im,-30,'bilinear','loose');
@@ -29,4 +31,5 @@ for z = zRange(1) : 1 :zRange(2)
     imwrite(Crop_tmp,[DstDir Im_Prefix num2str(z,'%05d') '.jpg'],'quality',95);
     toc;
 end
+close(waitbar_crop3);
 disp('End');

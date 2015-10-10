@@ -63,3 +63,4 @@
 [6]MBA-GI13444_XXXXX CropCoordinate X：3168 Y：4224 CropWidth：14080 CropHeight：8768 ZRange：6001 -6500 备注信息：左侧海马区 
 02-Oct-2015 
 [1]MBA-GI13443_XXXXX_Crop CropCoordinate X：100 Y：100 CropWidth：100 CropHeight：100 ZRange：6201 -6210 备注信息： 
+05-Oct-2015 
